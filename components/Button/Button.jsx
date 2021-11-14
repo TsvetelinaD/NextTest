@@ -1,14 +1,18 @@
 import { StyledButton, StyledButtonText, ButtonContainer, ButtonImageContainer, ButtonTextContainer, StyledHeadingText } from "./elements";
+import Image from "next/image";
 
-export const Button = ({ children, ...props }) => {
+export const Button = ({ ...buttonProps }) => {
   return (
-    <StyledButton {...props}>
+    
+    <StyledButton >
       <ButtonContainer>
-        <ButtonImageContainer>img</ButtonImageContainer>
+        <ButtonImageContainer>
+          <Image src={buttonProps.image.src} alt={buttonProps.image.alt} width={buttonProps.image.width} height={buttonProps.image.height} />
+        </ButtonImageContainer>
 
         <ButtonTextContainer>
-          <StyledHeadingText>{children}</StyledHeadingText>
-          <StyledButtonText>{children}</StyledButtonText>
+          <StyledHeadingText>{buttonProps.title}</StyledHeadingText>
+          <StyledButtonText>{buttonProps.description}</StyledButtonText>
         </ButtonTextContainer>
 
       </ButtonContainer>

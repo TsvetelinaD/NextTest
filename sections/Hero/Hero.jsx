@@ -1,9 +1,9 @@
-import Image from "next/image";
-import { Card } from "../../collections/Card/Card";
+// import Image from "next/image";
+// import { Card } from "../../collections/Card/Card";
+import { SectionContainer } from "../../components/Containers/SectionContainer/SectionContainer";
 
 import {
   StyledTextContainer,
-  StyledContainer,
   StyledTitle,
   StyledDescription,
   StyledCTAContainer,
@@ -15,21 +15,16 @@ export const Hero = ({ image, title, description, ctaText, ...props }) => {
 
   return (
     <>
-      <StyledContainer {...props}>
-        <StyledTextContainer>
-          <StyledTitle>{title}</StyledTitle>
-          <StyledDescription>{description}</StyledDescription>
-          {/* <StyledCTAContainer>
+
+      <StyledTextContainer>
+        <StyledTitle>{title}</StyledTitle>
+        <StyledDescription>{description}</StyledDescription>
+        {/* <StyledCTAContainer>
             <StyledGetStartedBtn>{ctaText}</StyledGetStartedBtn>
           </StyledCTAContainer> */}
-        </StyledTextContainer>
-      </StyledContainer>
+      </StyledTextContainer>
 
-      <StyledImageContainer>
-        <Image layout="responsive" src={image.src} alt={image.alt} width={image.width} height={image.height} />
-      </StyledImageContainer>
-
-      <Card />
+      <SectionContainer img={image}></SectionContainer>
     </>
   );
 };

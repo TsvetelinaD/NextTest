@@ -41,5 +41,5 @@ export const StyledImageContainer = styled(({ ...props }) => <div {...props} />)
   width: 100%;
   height: 100%;
   margin-left: 10rem;
-  margin-top: 5rem;
+  margin-top: 1rem;
 `;

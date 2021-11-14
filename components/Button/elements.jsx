@@ -46,18 +46,21 @@ const buttonVariants = {
 export const StyledButton = styled(({ color = "primary", variant = "contained", ...props }) => <button {...props} />)`
   font-family: sans-serif;
   overflow: hidden;
+  align-items: center;
   text-align: left;
-  align-self: center;  
-  justify-content: center;
+  // align-self: center;  
+  // justify-content: center;
   border-radius: 7px;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
   min-width: 300px;
   min-height: 56px;
+  max-width: 500px;
   cursor: pointer;
   border: none;
   color: black;
+  margin: 3%;
   &:hover {
     border: 2px solid ${({ theme }) => theme.main};
   }
@@ -65,18 +68,26 @@ export const StyledButton = styled(({ color = "primary", variant = "contained", 
 `;
 
 export const StyledButtonText = styled((props) => <SectionInnerHeading {...props} />)`
-margin: 2px;
+  margin-left: 2rem;
+  margin-top: 0.1rem;
+  margin-bottom: auto;
 `;
 
 export const StyledHeadingText = styled((props) => <span {...props} />)`
 font-family: Poppins;
-  font-size: 1.25rem;
-  line-height: 1.875rem;
-  font-weight: 300;
+  font-size: 1.20rem;
+  font-weight: 450;
+  margin-left: 2rem;
+  &:hover {
+    color: ${({ theme }) => theme.main};
+    text-decoration: underline;
+  }
 `;
 
 export const ButtonContainer = styled(({ color = "primary", ...props }) => <span {...props} />)`
   font-family: sans-serif;
+  // vertical-align: middle;
+  padding: 0.5rem;
   display: block;
   overflow: hidden;
   cursor: pointer;
@@ -85,17 +96,18 @@ export const ButtonContainer = styled(({ color = "primary", ...props }) => <span
 export const ButtonImageContainer = styled(({ color = "primary", ...props }) => <span {...props} />)`
   overflow: hidden;
   display: inline-block;
-  vertical-align: middle;
   align-self: center;  
   text-align:center;
   cursor: pointer;
-  width: 40%
+  width: 20%;
+  margin-top: 0.5rem;
+
 `;
 
 export const ButtonTextContainer = styled(({ color = "primary", ...props }) => <span {...props} />)`
   overflow: hidden;
   display: inline-block;
-  justify-content: center;
   cursor: pointer;
-  width: 60%;
+  width: 80%;
+  // align-items: flex-start;
 `;
