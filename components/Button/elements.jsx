@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-import { SectionInnerHeading, StyledSectionSubheading } from "~/components";
 
 const outlinedVariantButton = css`
   background-color: transparent;
@@ -45,69 +44,45 @@ const buttonVariants = {
 
 export const StyledButton = styled(({ color = "primary", variant = "contained", ...props }) => <button {...props} />)`
   font-family: sans-serif;
-  overflow: hidden;
-  align-items: center;
-  text-align: left;
-  // align-self: center;  
-  // justify-content: center;
   border-radius: 7px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  min-width: 300px;
-  min-height: 56px;
-  max-width: 500px;
   cursor: pointer;
   border: none;
-  color: black;
-  margin: 3%;
+  margin: 2px;
   &:hover {
+    margin: 0;
     border: 2px solid ${({ theme }) => theme.main};
   }
   ${({ variant }) => buttonVariants[variant]}
 `;
 
-export const StyledButtonText = styled((props) => <SectionInnerHeading {...props} />)`
-  margin-left: 2rem;
-  margin-top: 0.1rem;
-  margin-bottom: auto;
+export const StyledButtonText = styled((props) => <div {...props} />)`
+  font-size: 12px;
 `;
 
 export const StyledHeadingText = styled((props) => <span {...props} />)`
-font-family: Poppins;
-  font-size: 1.20rem;
-  font-weight: 450;
-  margin-left: 2rem;
-  &:hover {
+  font-family: Poppins;
+  line-height: 1.5;
+  font-size: 14px;
+  font-weight: 600;
+`;
+
+export const ButtonContainer = styled(({ color = "primary", ...props }) => <div {...props} />)`
+  font-family: sans-serif;
+  padding: 15px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  &:hover ${StyledHeadingText} {
     color: ${({ theme }) => theme.main};
     text-decoration: underline;
   }
-`;
-
-export const ButtonContainer = styled(({ color = "primary", ...props }) => <span {...props} />)`
-  font-family: sans-serif;
-  // vertical-align: middle;
-  padding: 0.5rem;
-  display: block;
-  overflow: hidden;
-  cursor: pointer;
-`;
-
-export const ButtonImageContainer = styled(({ color = "primary", ...props }) => <span {...props} />)`
-  overflow: hidden;
-  display: inline-block;
-  align-self: center;  
-  text-align:center;
-  cursor: pointer;
-  width: 20%;
-  margin-top: 0.5rem;
-
 `;
 
 export const ButtonTextContainer = styled(({ color = "primary", ...props }) => <span {...props} />)`
   overflow: hidden;
   display: inline-block;
   cursor: pointer;
-  width: 80%;
-  // align-items: flex-start;
+  text-align:left;
 `;
